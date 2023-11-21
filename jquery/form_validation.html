@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" type="image/x-icon">
+    <title>Jquery Features | Form Validation</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: aliceblue;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        main h1 {
+            font-size: 5rem;
+        }
+
+        main input {
+            padding: 1rem;
+            border: 2px solid black;
+            border-radius: 0.5rem;
+            font-size: 1.25rem;
+            background-color: white;
+            margin: 0.5rem 0;
+            width: 100%;
+        }
+
+        main #submit {
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        main #submit:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form name="formOne" action="#" onsubmit="validation()">
+            <h1>🧙‍♂️</h1> <br>
+            <input type="text" name="userName" placeholder="Input your name" required><br> <!-- Primeira validação: required -->
+            <input type="email" name="userMail" placeholder="Input your email" required><br> <!-- Segunda validação: tipo email e required -->
+            <input type="text" name="userCep" placeholder="Input your cep" required onkeypress="$(this).mask('00000-000')">
+            <input type="submit" value="Submit" id="submit">
+        </form>
+    </main>
+
+    <script>
+        function validation() {
+            let name = document.formOne.userName.value
+            let mail = document.formOne.userMail.value
+            let cep = document.formOne.userCep.value
+            let control = true
+
+            if(name.length<5) {
+                alert('Name error: please type 5 characters or more')
+                control = false
+            }
+            if(mail.length<10) {
+                alert('Mail error: please type 15 characters or more')
+                control = false
+            }
+            if(cep.length<9) {
+                alert('Cep error: please type 9 characters or more')
+                control = false
+            }
+            return control
+        }
+    </script>
+</body>
+</html>

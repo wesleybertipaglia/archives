@@ -1,0 +1,38 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+  }
+  
+  button {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    border: solid 1px transparent;
+    font-weight: bold;
+  }
+  .btn-close {
+    background: #ffc8dd;
+    color: #0b0b0b;
+    width: 100%;
+  }
+  
+  dialog {
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .icon {
+    font-size: 4rem;
+  }
+  
+  .text-content {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }

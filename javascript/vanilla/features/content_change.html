@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" type="image/x-icon">
+    <title>JS Features | Image Change</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body class="container-fluid">
+    <main class="container d-flex flex-column align-items-center justify-content-center" style="height: 100vh;">
+        <img src="https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo.eb1324e44442.svg" id="img" alt="Firefox logo" class="mb-3" style="width: 20rem; height: 20rem; object-fit: contain;">
+        <input type="button" value="Change" onclick="imgChange()" class="btn btn-light border shadow-sm">
+    </main>
+
+    <script>
+        const image = document.getElementById('img')
+        const gallery = [
+            {
+                id: 1,
+                name: 'Firefox logo',
+                url: 'https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo.eb1324e44442.svg'
+            },
+            {
+                id: 2,
+                name: 'Google Doodle',
+                url: 'https://www.google.com/logos/doodles/2021/googles-23rd-birthday-6753651837109087-2xa.gif'
+            },
+        ]
+        let imageState = gallery[0]
+
+        function imgChange() {
+            imageState = (imageState == gallery[0]) ? gallery[1] : gallery[0]
+            image.src = imageState.url
+            image.alt = imageState.name
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/style/style.css">
+</head>
+<body>
+    <main>
+        <div class="calculator">
+            <div class='display'>
+                <input id='result' type='text' placeholder='0' disabled>
+            </div>
+            <table>
+                <tr>
+                    <td id='ac' colspan="2">AC</td>
+                    <td class='operators' value='/'>%</td>
+                    <td class='operators' value='/'>/</td>
+                </tr>
+                <tr>
+                    <td class='numbers' value='7'>7</td>
+                    <td class='numbers' value='8'>8</td>
+                    <td class='numbers' value='9'>9</td>
+                    <td class='operators' value='*'>x</td>
+                </tr>
+                <tr>
+                    <td class='numbers' value='4'>4</td>
+                    <td class='numbers' value='5'>5</td>
+                    <td class='numbers' value='6'>6</td>
+                    <td class='operators' value='-'>-</td>
+                </tr>
+                <tr>
+                    <td class='numbers' value='1'>1</td>
+                    <td class='numbers' value='2'>2</td>
+                    <td class='numbers' value='3'>3</td>
+                    <td class='operators' value='+'>+</td>
+                </tr>
+                <tr>
+                    <td class='numbers' value='0'>0</td>
+                    <td class='numbers' value='.'>.</td>
+                    <td id="remove">⌫</td>
+                    <td id='eval' value='='>=</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <script src="src/script/calculator.js"></script>
+</body>
+</html>

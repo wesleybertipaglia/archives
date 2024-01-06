@@ -1,0 +1,373 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 2rem;
+    height: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav .weft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+nav .weft .w {
+    font-size: 36px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+}
+
+nav a:hover {
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+nav ul img {
+    height: 16px;
+}
+
+nav .entrarCadastrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+header form {
+    padding: 1rem;
+    margin: 0 2.5rem;
+    text-align: center;
+}
+
+header form input {
+    padding: 0.5rem;
+    width: 100%;
+    border: 1px solid lightgray;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+header ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+header span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    height: 2rem;
+}
+
+header span p, header span a {
+    background-color: #f1f1f1;
+    color: black;
+    text-decoration: none;
+}
+
+.banner {
+    background-image: url('src/banner/bannerAltoVerao.jpg');
+    height: 500px;
+}
+
+.categorias {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2.5rem;
+}
+
+.categorias a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+.categorias img {
+    height:  7rem;
+    border-radius: 3.5rem;
+    margin: 0.5rem;
+    transition: all ease 0.5s;
+}
+
+.categorias img:hover {
+    transform: scale(1.1);
+}
+
+.modas, .blacknovember, .produtos {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem;
+}
+
+.modas div, .promocoes, .colecoes, .tags, .footerCategorias, .glossario, .info, .formasPagamento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2.5rem;
+}
+
+.modas {
+    padding-bottom: 0;
+}
+
+.modas a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+.modas img {
+    height:  12rem;
+    border-radius: 2.5rem;
+    margin: 0.5rem;
+    transition: all ease 0.5s;
+}
+
+.modas img:hover {
+    transform: scale(1.1);
+}
+
+.blacknovember a {
+    text-decoration: none;
+    text-align: center;
+    transition: all ease 0.5s;
+    padding: 1rem;
+    color: black;
+}
+
+.blacknovember a:hover {
+    transform: scale(1.1);
+}
+
+.blacknovember a p {
+    font-size: smaller;
+}
+
+.blacknovember h2 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.blacknovember div, .blacknovember span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.blacknovember span .desconto {
+    font-size: 48px;
+}
+
+.blacknovember span .off {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: black;
+    padding: 3px;
+}
+
+.blacknovember .codigo {
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    padding: 1rem;
+}
+
+.promocoes img {
+    height: 7rem;
+    transition: all ease 0.5s;
+}
+
+.promocoes img:hover {
+    transform: scale(1.1); 
+}
+
+.colecoes a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+.colecoes img {
+    height:  12rem;
+    transition: all ease 0.5s;
+}
+
+.colecoes img:hover {
+    transform: scale(1.1);
+}
+
+.produtos {
+    padding-bottom: 0.5rem;
+}
+
+.produtos h2 {
+    margin-bottom: 2rem;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.produtos div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.produtos a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+.produtos img {
+    width:  300px;
+    transition: all ease 0.5s;
+}
+
+.produtos img:hover {
+    transform: scale(1.1);
+}
+
+.produtos .nomeProduto p {
+    width: 300px;
+}
+
+.produtos p {
+    font-size: 0.68rem;
+    font-family: Arboria, sans-serif;
+    font-weight: 300;
+    line-height: 1.43;
+    color: rgb(110, 110, 110);
+    text-transform: uppercase;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.produtos .preco {
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: bold;
+}
+
+.tags a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    background-color: darkgray;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.tags a:hover {
+    background-color: black;
+}
+
+.newsletter {
+    display: flex;
+    justify-content: center;
+    text-align: center;   
+    padding: 2rem;
+    padding-top: 0;
+}
+
+.newsletter span, .newsletter form {
+    padding: 0.5rem;
+}
+
+.newsletter form input{
+    padding: 0.75rem;
+    border: 1px solid black;
+    outline: none;
+}
+
+.newsletter form button{
+    padding: 0.75rem;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #f1f1f1;
+}
+
+footer a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer .footerTittle {
+    text-align: center;
+}
+
+.glossario {
+    padding: 0;
+}
+
+.glossario ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.formasPagamento ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.formasPagamento img {
+    height: 2rem;
+}
+

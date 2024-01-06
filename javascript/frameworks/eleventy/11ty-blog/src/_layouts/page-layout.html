@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/assets/images/eleventy.png"
+      type="image/png"
+    />
+
+    <link rel="stylesheet" href="/assets/styles/style.css" type="text/css" />
+    <title>{{ title | default: "11ty Blog" }}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+
+        <ul>
+          {% for navItem in collections.nav %}
+          <li><a href="{{navItem.url}}">{{navItem.data.title}}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div>
+        <h1>{{ title | default: "11ty Blog" }}</h1>
+        {{ content }}
+
+        <section>
+          <img
+            src="/assets/images/eleventy.png"
+            alt="Eleventy Mascot"
+            class="eleventy"
+          />
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div>
+        <p class="made-with-love">Made with ❤️</p>
+        <p class="copyright">
+          &copy; 2023 Wesley Bertipaglia - All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

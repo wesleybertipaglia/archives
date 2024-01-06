@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" type="image/x-icon">
+    <title>JS Features | Cookies</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body class="container-fluid" style="min-height: 100vh;">
+    <main class="container d-flex align-items-center h-100 p-3">
+        <div class="card bg-light rounded mx-auto col-12 col-md-6 p-0">
+            <div class="card-header text-center">
+                <span class="h1">🍪</span>
+            </div>
+
+            <span class="card-body">
+                <h2>Cookies contest</h2>
+                <p>
+                    This website uses technically necessary cookies. 
+                    With your consent, this website shall use additional cookies (including third party cookies) or similar technologies to make our site work, for marketing purposes and to improve your online experience.
+                    You can revoke your consent via the Cookie Settings in the footer of the website at any time. Further information can be found in our Privacy Policy and in the Cookie Settings directly below.
+                </p>
+            </span>
+
+            <div class="card-footer d-flex justify-content-center">
+                <button onclick="setCookie(false)" class="btn btn-light mr-3">Reject All</button>
+                <button onclick="setCookie(true)" class="btn btn-success shadow">Accept All Cookies</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function setCookie(accept) {
+            const baseUrl = document.location.baseUrl
+            const expireDate = new Date()
+            expireDate.setDate(expireDate.getDate() + 7)
+            document.cookie = "accept=" + accept + "; expires=" + expireDate.toUTCString() + "; path=/; domain=" + baseUrl + "; SameSite=None; Secure"
+        }
+    </script>
+</body>
+</html>

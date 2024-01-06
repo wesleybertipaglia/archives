@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja | Cadastre-se</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+        }
+
+        main {
+            width: 50%;
+            margin: auto;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+        form input, button {
+            width: 100%;
+            padding: 1rem;
+            border: solid 1px #0a0a0a;
+            border-radius: 0.25rem;
+        }
+        form input {
+            background: #fbfbfb;
+            color: #0a0a0a;
+        }
+        form button {
+            background: #0a0a0a;
+            color: #fbfbfb;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form action="bd/cad_pessoa.php" method="post">
+            <input type="text" placeholder="Nome" name="nome" required>
+            <input type="text" placeholder="Usuario" name="usuario" required>
+            <input type="email" placeholder="E-mail" name="email" required>
+            <input type="password" placeholder="Senha" name="senha" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </main>
+</body>
+</html>

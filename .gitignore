@@ -13,10 +13,13 @@
 /dist/
 
 # Ignore package manager directories and files
-/node_modules/
+node_modules/
 package-lock.json
-/packages/
-/pip/
+packages/
+pip/
 
 # Ignore log files
 *.log
+
+# Ignore databases
+*.db

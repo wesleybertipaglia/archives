@@ -6,7 +6,13 @@ module.exports = {
   },
   extends: [
     'standard',
-    'plugin:react/recommended'
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/react',
+    'prettier'
   ],
   overrides: [
     {
@@ -26,8 +32,24 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'react'
+    'react',
+    'react-hooks',
+    'jsx-a11y',
+    'import',
+    'prettier'
   ],
   rules: {
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off'
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.json']
+      }
+    }
   }
 }

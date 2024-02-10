@@ -1,10 +1,28 @@
-import { Link } from 'react-router-dom'
+import { useContext, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import Carrousel from './Carrousel'
+import Modal from './Modal'
+import AdoptedContext from '../contexts/AdoptedContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
-import Carrousel from './Carrousel'
 
 const Pet = ({ id, name, description, animal, breed, images, state, city }) => {
+    const [showModalAdopt, setShowModalAdopt] = useState(false)
+    const [showModalShare, setShowModalShare] = useState(false)
+    const [adopted, setAdoptedPet] = useContext(AdoptedContext)
     let animalType = animal.charAt(0).toUpperCase() + animal.slice(1)
+    const navigate = useNavigate()
+    const pet = {
+        id: id,
+        name: name,
+        description: description,
+        animal: animal,
+        breed: breed,
+        images: images,
+        state: state,
+        city: city,
+        location: city + ', ' + state,
+    }
 
     return (
         <div className="flex flex-col md:flex-row gap-6 ">
@@ -30,14 +48,101 @@ const Pet = ({ id, name, description, animal, breed, images, state, city }) => {
                 </div>
 
                 <div className="flex gap-3">
-                    <button className="py-2 px-4 rounded bg-lime-300 hover:bg-lime-200 border border-lime-200">
+                    <button
+                        onClick={() => setShowModalAdopt(true)}
+                        className="py-2 px-4 rounded bg-lime-300 hover:bg-lime-200 border border-lime-200"
+                    >
                         Adopt {name}
                     </button>
 
-                    <button className="py-2 px-4 rounded bg-neutral-100 border">
+                    <button
+                        onClick={() => setShowModalShare(true)}
+                        className="py-2 px-4 rounded bg-neutral-100 border"
+                    >
                         Share
                     </button>
                 </div>
+
+                {showModalAdopt ? (
+                    <Modal>
+                        <div className="flex flex-col gap-6">
+                            <h2>Would you like to adopt {name}?</h2>
+                            <div className="flex gap-3">
+                                <button
+                                    onClick={() => {
+                                        setAdoptedPet(pet)
+                                        setShowModalAdopt(false)
+                                        navigate('/')
+                                    }}
+                                    className="w-full py-2 px-4 rounded bg-lime-300 hover:bg-lime-200 border border-lime-200"
+                                >
+                                    Yes
+                                </button>
+                                <button
+                                    onClick={() => setShowModalAdopt(false)}
+                                    className="w-full py-2 px-4 rounded bg-neutral-100 border"
+                                >
+                                    No
+                                </button>
+                            </div>
+                        </div>
+                    </Modal>
+                ) : null}
+
+                {showModalShare ? (
+                    <Modal>
+                        <div className="flex flex-col gap-6">
+                            <h2>Share {name} with your friends!</h2>
+                            <div className="flex flex-col gap-3">
+                                <Link
+                                    to={
+                                        'https://twitter.com/intent/tweet?text=' +
+                                        name +
+                                        ' needs a home! Adopt it at: ' +
+                                        window.location.href +
+                                        ' %23AdoptAPet'
+                                    }
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    className="w-full py-1 px-2 rounded border"
+                                >
+                                    Twitter
+                                </Link>
+
+                                <Link
+                                    to={
+                                        'https://api.whatsapp.com/send?text=' +
+                                        name +
+                                        ' needs a home! Adopt it at: ' +
+                                        window.location.href +
+                                        ' %23AdoptAPet'
+                                    }
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    className="w-full py-1 px-2 rounded border"
+                                >
+                                    WhatsApp
+                                </Link>
+
+                                <Link
+                                    to={
+                                        'mailto:?subject=Adopt ' +
+                                        name +
+                                        '&body=' +
+                                        name +
+                                        ' needs a home! ' +
+                                        window.location.href
+                                    }
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    className="w-full py-1 px-2 rounded border"
+                                >
+                                    Email
+                                </Link>
+                            </div>
+                        </div>
+                    </Modal>
+                ) : null}
             </div>
         </div>
     )

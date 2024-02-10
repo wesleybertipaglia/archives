@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
+import ErrorBoundary from '../components/ErrorBoundary'
 import fetchPet from '../hooks/fetchPet'
 import Pet from '../components/Pet'
 
@@ -8,7 +9,7 @@ const Details = () => {
     const results = useQuery({
         queryKey: ['details', id],
         queryFn: fetchPet,
-    })
+    })    
 
     if (results.isLoading) {
         return (
@@ -31,4 +32,12 @@ const Details = () => {
     )
 }
 
-export default Details
+function DetailsErrorBoundary() {
+    return (
+        <ErrorBoundary>
+            <Details />
+        </ErrorBoundary>
+    )
+}
+
+export default DetailsErrorBoundary

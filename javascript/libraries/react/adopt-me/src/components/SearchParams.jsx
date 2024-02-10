@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import fetchSearch from '../hooks/fetchSearch'
 import useBreeds from '../hooks/useBreeds'
 import useAnimals from '../hooks/useAnimals'
 import ListPets from './ListPets'
+import AdoptedContext from '../contexts/AdoptedContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 const SearchParams = () => {
-    const [search, setSearch] = useState({ 
-        location: '', 
-        animal: '', 
-        breed: '' 
+    const [adoptedPet] = useContext(AdoptedContext)
+    const [search, setSearch] = useState({
+        location: '',
+        animal: '',
+        breed: '',
     })
     const [animal, setAnimal] = useState('')
     const [breeds] = useBreeds(animal)
@@ -22,10 +24,15 @@ const SearchParams = () => {
         queryFn: fetchSearch,
     })
 
-    const pets = results?.data?.pets ?? [];
+    const pets = results?.data?.pets ?? []
 
     return (
         <div className="container max-w-5xl mx-auto p-6">
+            {adoptedPet ? (
+                <div className="py-1 px-2 w-fit mb-3 rounded-md bg-lime-200">
+                    <h2>Thanks for adopting {adoptedPet.name}</h2>
+                </div>
+            ) : null}
             <form
                 className="flex gap-4 mb-6 text-base"
                 onSubmit={(e) => {
@@ -56,7 +63,9 @@ const SearchParams = () => {
                         name="animal"
                         value={animal}
                         className="border p-1 rounded-sm w-full"
-                        onChange={(e) => { setAnimal(e.target.value) }}
+                        onChange={(e) => {
+                            setAnimal(e.target.value)
+                        }}
                     >
                         <option hidden selected value={''}>
                             Animal

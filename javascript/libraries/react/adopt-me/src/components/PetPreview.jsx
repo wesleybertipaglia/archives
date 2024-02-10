@@ -1,8 +1,11 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import AdoptedContext from '../contexts/AdoptedContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 
 const Pet = ({ name, animal, breed, images, state, city, id }) => {
+    const [adopted] = useContext(AdoptedContext)
     let image = images[0] ?? 'http://pets-images.dev-apis.com/pets/none.jpg'
 
     return (
@@ -14,7 +17,17 @@ const Pet = ({ name, animal, breed, images, state, city, id }) => {
                     className="h-20 w-20 aspect-square object-cover rounded-full"
                 />
                 <div>
-                    <h2>{name}</h2>
+                    <h2 className="inline-flex gap-2">
+                        {name}
+                        {adopted?.id == id ? (
+                            <>
+                                <span> - </span>
+                                <span className="bg-lime-500 px-1 rounded text-white">
+                                    Adopted
+                                </span>
+                            </>
+                        ) : null}
+                    </h2>
                     <p>
                         {animal} - {breed}
                     </p>

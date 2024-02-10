@@ -1,60 +1,66 @@
-import React, { useState, useEffect } from 'react'
-import Pet from './Pet'
+import React, { useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
+import fetchSearch from '../hooks/fetchSearch'
 import useBreeds from '../hooks/useBreeds'
+import useAnimals from '../hooks/useAnimals'
+import ListPets from './ListPets'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 const SearchParams = () => {
-    const [location, setLocation] = useState('')
+    const [search, setSearch] = useState({ 
+        location: '', 
+        animal: '', 
+        breed: '' 
+    })
     const [animal, setAnimal] = useState('')
-    const [breed, setBreed] = useState('')
-    const [pets, setPets] = useState([])
-    const [animals, setAnimals] = useState([])
     const [breeds] = useBreeds(animal)
+    const [animals] = useAnimals()
 
-    useEffect(() => {
-        requestPets()
-        requestAnimals()
-    }, [])
+    const results = useQuery({
+        queryKey: ['search', search],
+        queryFn: fetchSearch,
+    })
 
-    async function requestPets() {
-        const res = await fetch(
-            `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
-        )
-        const json = await res.json()
-        setPets(json.pets)
-    }
-
-    async function requestAnimals() {
-        const res = await fetch(`http://pets-v2.dev-apis.com/animals`)
-        const json = await res.json()
-        setAnimals(json.animals)
-    }
+    const pets = results?.data?.pets ?? [];
 
     return (
-        <div className="search-params">
+        <div className="container max-w-5xl mx-auto p-6">
             <form
+                className="flex gap-4 mb-6 text-base"
                 onSubmit={(e) => {
                     e.preventDefault()
-                    requestPets()
+                    const formData = new FormData(e.target)
+                    const obj = {
+                        location: formData.get('location') || '',
+                        animal: formData.get('animal') || '',
+                        breed: formData.get('breed') || '',
+                    }
+                    setSearch(obj)
                 }}
             >
-                <label htmlFor="location">
+                <label htmlFor="location" className="w-full self-end">
                     Location
                     <input
                         id="location"
-                        value={location}
+                        name="location"
                         placeholder="Location"
-                        onChange={(e) => setLocation(e.target.value)}
+                        className="border p-1 rounded-sm w-full"
                     />
                 </label>
 
-                <label htmlFor="animal">
+                <label htmlFor="animal" className="w-full self-end">
                     Animal
                     <select
                         id="animal"
+                        name="animal"
                         value={animal}
-                        onChange={(e) => setAnimal(e.target.value)}
-                        onBlur={(e) => setAnimal(e.target.value)}
+                        className="border p-1 rounded-sm w-full"
+                        onChange={(e) => { setAnimal(e.target.value) }}
                     >
+                        <option hidden selected value={''}>
+                            Animal
+                        </option>
                         <option />
                         {animals.map((animal) => (
                             <option key={animal} value={animal}>
@@ -64,15 +70,17 @@ const SearchParams = () => {
                     </select>
                 </label>
 
-                <label htmlFor="breed">
+                <label htmlFor="breed" className="w-full self-end">
                     Breed
                     <select
                         id="breed"
-                        value={breed}
-                        onChange={(e) => setBreed(e.target.value)}
-                        onBlur={(e) => setBreed(e.target.value)}
+                        name="breed"
                         disabled={!breeds.length}
+                        className="border p-1 rounded-sm w-full"
                     >
+                        <option hidden selected value={''}>
+                            Breed
+                        </option>
                         <option />
                         {breeds.map((breed) => (
                             <option key={breed} value={breed}>
@@ -81,19 +89,12 @@ const SearchParams = () => {
                         ))}
                     </select>
                 </label>
-                <button>Submit</button>
+                <button className="h-fit self-end py-1 px-2 border rounded">
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                </button>
             </form>
 
-            {pets.map((pet) => {
-                return (
-                    <Pet
-                        key={pet.name}
-                        name={pet.name}
-                        animal={pet.animal}
-                        breed={pet.breed}
-                    />
-                )
-            })}
+            <ListPets pets={pets} />
         </div>
     )
 }

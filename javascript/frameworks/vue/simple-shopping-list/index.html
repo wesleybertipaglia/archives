@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue is amazing! 🍐</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div>
+          <a href="/">Home</a>
+        </div>
+      </header>
+
+      <main>
+        <section>
+          <div>
+            <h1>Shopping List App</h1>
+
+            <label>
+              <input
+                v-model="newItem.label"
+                type="text"
+                placeholder="Add an item"
+              />
+              <select v-model="newItem.priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+              <button
+                :disabled="newItem.length == 0"
+                @click="saveItem"
+                @keyup.enter="saveItem"
+              >
+                Add
+              </button>
+            </label>
+
+            <div>
+              <p v-if="items.length === 0">
+                Nice job! You've bought all your items!
+              </p>
+              <ul class="shopping-list">
+                <li
+                  v-for="(item, index) in items"
+                  :key="item.id"
+                  :class="[
+                  item.priority,
+                  {strikeout: item.purchased}
+                  ]"
+                >
+                  <label>
+                    <input v-model="item.purchased" type="checkbox" />
+                    <span class="label">{{item.label}}</span>
+                    <span class="priority">{{item.priority}}</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div>
+          <p>
+            Developed with 🧠 by
+            <a href="https://github.com/wesleybertipaglia" target="_blank"
+              >@wesleybertipaglia</a
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            newItem: {
+              label: "",
+              priority: "low",
+            },
+            items: [
+              {
+                id: crypto.randomUUID(),
+                label: "10 party hats",
+                purchased: true,
+                priority: "low",
+              },
+              {
+                id: crypto.randomUUID(),
+                label: "10 T-shirts",
+                purchased: false,
+                priority: "medium",
+              },
+              {
+                id: crypto.randomUUID(),
+                label: "20 cups",
+                purchased: false,
+                priority: "high",
+              },
+            ],
+          };
+        },
+        methods: {
+          saveItem() {
+            if (this.newItem == "") return;
+
+            this.items.push({
+              id: crypto.randomUUID(),
+              label: this.newItem.label,
+              purchased: false,
+              priority: this.newItem.priority,
+            });
+
+            this.newItem = {
+              label: "",
+              priority: "low",
+            };
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

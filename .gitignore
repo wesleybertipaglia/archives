@@ -8,15 +8,16 @@
 *.dylib
 
 # Ignore build output directories
-/bin/
-/build/
-/dist/
+bin/
+build/
+dist/
 
 # Ignore package manager directories and files
 node_modules/
 package-lock.json
 packages/
 pip/
+__pycache__/
 
 # Ignore log files
 *.log

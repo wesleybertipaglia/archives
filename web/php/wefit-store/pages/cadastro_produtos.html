@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeFit | Cadastro de Produtos</title>
+    <link rel="shortcut icon" href="../src/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+<body>
+    <main>
+        <span class="title">
+            <h1>Cadastro de Produtos</h1>
+        </span>
+
+        <form action="../database/insert_produtos.php" method="post">
+            <input type="text" name="NomeProduto" required placeholder="Nome do produto">
+            <textarea name="DescricaoProduto" cols="30" rows="10" required placeholder="Descrição do produto"></textarea>
+            <input type="text" name="ValorProduto" required placeholder="Preço de venda">
+            <span class="selectSpan">
+                <label for="selct">Disponibilidade para venda</label>
+                <select name="DisponibilidadeProduto" id="DisponibilidadeProduto">
+                    <option value="Sim">Disponível</option>
+                    <option value="Nao">Indisponível</option>
+                </select>
+            </span> <br>
+            <button type="submit" class="cadastrar">Cadastrar</button>
+        </form>
+    </main>
+</body>
+</html>

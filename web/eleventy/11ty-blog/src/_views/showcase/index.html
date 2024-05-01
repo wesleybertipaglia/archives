@@ -1,0 +1,13 @@
+---
+layout: page-layout.html
+title: Showcase
+tags: nav
+---
+
+<section>
+  {% for showcase in collections.showcase %}
+  <article>
+    <a href="{{showcase.url}}"> {{showcase.data.title}} </a>
+  </article>
+  {% endfor %}
+</section>

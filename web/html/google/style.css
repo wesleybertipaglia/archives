@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: gray;
+}
+
+nav {
+    display: flex;
+    justify-content: end;
+    padding: 1em;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1em;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav #profilePhoto {
+    border-radius: 50%;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main img {
+    height: 10em;
+    margin: 2em 0;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 0.5em;
+}
+
+.search input {
+    outline: none;
+    width: 30em;
+    height: 3em;
+    border-radius: 2em;
+    padding: 1.5em;
+    boder: solid 1px gray;
+}
+
+.shortcuts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: 5em;
+}
+
+.shortcuts a {
+    text-decoration: none;
+    color: darkgray;
+    font-weight: 400;
+    font-size: 13px;
+    width: 6em;
+    height: 6em;
+    padding: 3.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25em;
+}
+
+.shortcuts a:hover {
+    background-color: lightgray;
+    color: gray;
+}
+
+.short-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(238, 238, 238);
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+}
+
+.shortcuts img {
+    height: 2em;
+    margin: 1em;
+}
+
+.short-title {
+    margin-top: 0.5em;
+}

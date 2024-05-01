@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "text": "Imagination is more important than knowledge.",
+    "authorId": 1,
+    "categoryId": 1,
+    "keywords": ["imagination", "knowledge"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 2,
+    "text": "The only way to do great work is to love what you do.",
+    "authorId": 6,
+    "categoryId": 2,
+    "keywords": ["great work", "passion"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 3,
+    "text": "Innovation distinguishes between a leader and a follower.",
+    "authorId": 9,
+    "categoryId": 3,
+    "keywords": ["innovation", "leader"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 4,
+    "text": "The future belongs to those who believe in the beauty of their dreams.",
+    "authorId": 16,
+    "categoryId": 4,
+    "keywords": ["future", "dreams"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 5,
+    "text": "Logic will get you from A to B. Imagination will take you everywhere.",
+    "authorId": 17,
+    "categoryId": 5,
+    "keywords": ["logic", "imagination"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 6,
+    "text": "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+    "authorId": 41,
+    "categoryId": 6,
+    "keywords": ["success", "failure", "courage"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 7,
+    "text": "The only limit to our realization of tomorrow will be our doubts of today.",
+    "authorId": 51,
+    "categoryId": 7,
+    "keywords": ["limit", "realization", "doubts"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 8,
+    "text": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "authorId": 52,
+    "categoryId": 8,
+    "keywords": ["genius", "inspiration", "perspiration"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 9,
+    "text": "The art of simplicity is a puzzle of complexity.",
+    "authorId": 58,
+    "categoryId": 9,
+    "keywords": ["simplicity", "complexity", "puzzle"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 10,
+    "text": "To invent, you need a good imagination and a pile of junk.",
+    "authorId": 60,
+    "categoryId": 10,
+    "keywords": ["invent", "imagination", "junk"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 11,
+    "text": "Don't watch the clock; do what it does. Keep going.",
+    "authorId": 31,
+    "categoryId": 11,
+    "keywords": ["clock", "perseverance"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 12,
+    "text": "Coding is today's literacy. It is the 21st-century skill.",
+    "authorId": 36,
+    "categoryId": 12,
+    "keywords": ["coding", "literacy", "21st-century"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 13,
+    "text": "Your time is limited, don't waste it living someone else's life.",
+    "authorId": 39,
+    "categoryId": 13,
+    "keywords": ["time", "life", "limited"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 14,
+    "text": "The best way to predict the future is to invent it.",
+    "authorId": 43,
+    "categoryId": 14,
+    "keywords": ["future", "predict", "invent"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 15,
+    "text": "Science knows no country, because knowledge belongs to humanity.",
+    "authorId": 55,
+    "categoryId": 15,
+    "keywords": ["science", "knowledge", "humanity"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 16,
+    "text": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "authorId": 51,
+    "categoryId": 16,
+    "keywords": ["glory", "living", "rising", "falling"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 17,
+    "text": "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it.",
+    "authorId": 56,
+    "categoryId": 17,
+    "keywords": ["goal", "story", "achievement"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 18,
+    "text": "Life is really simple, but we insist on making it complicated.",
+    "authorId": 59,
+    "categoryId": 18,
+    "keywords": ["life", "simple", "complicated"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 19,
+    "text": "The only true wisdom is in knowing you know nothing.",
+    "authorId": 62,
+    "categoryId": 19,
+    "keywords": ["wisdom", "knowing", "nothing"],
+    "likeCount": 0,
+    "shareCount": 0
+  },
+  {
+    "id": 20,
+    "text": "Creativity is intelligence having fun.",
+    "authorId": 65,
+    "categoryId": 20,
+    "keywords": ["creativity", "intelligence", "fun"],
+    "likeCount": 0,
+    "shareCount": 0
+  }
+]

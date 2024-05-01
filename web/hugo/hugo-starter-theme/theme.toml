@@ -1,0 +1,14 @@
+# See https://github.com/wesleybertipaglia/hugo-base-theme#themetoml for an example
+
+name = "Hugo Base Theme"
+license = "MIT"
+licenselink = "https://github.com/wesleybertipaglia/hugo-base-theme/LICENSE"
+description = ""
+homepage = "https://github.com/wesleybertipaglia/hugo-base-theme"
+tags = ['base', 'template']
+features = []
+min_version = "0.41.0"
+
+[author]
+  name = "Wesley Bertipaglia"
+  homepage = "https://wesleybertipaglia.github.io"

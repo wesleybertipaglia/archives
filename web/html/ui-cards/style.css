@@ -1,0 +1,117 @@
+:root {
+    --h: #121519;
+    --p: #858c97;
+  }
+  * {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: var(--p);
+    scroll-behavior: smooth;
+    transition: 0.3s;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .d-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    height: 90vh;
+    padding: 2rem;
+    width: 100%;
+  }
+  .card {
+    width: fit-content;
+  }
+  
+  .card-img {
+    position: relative;
+    width: fit-content;
+    height: 28rem;
+    width: 20rem;
+    background-size: cover;
+  }
+  .card-img img {
+    height: 30rem;
+    width: auto;
+  }
+  .card-img[value="Juliet Fox"] {
+    background: url("https://images.unsplash.com/photo-1667723047494-b19cebb52706?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDd8UzRNS0xBc0JCNzR8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60")
+      no-repeat center center;
+  }
+  .card-img[value="Marie Blue"] {
+    background: url("https://images.unsplash.com/photo-1667821670551-cddb8bcd2052?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
+      no-repeat center center;
+  }
+  .card-img[value="Susan Chan"] {
+    background: url("https://images.unsplash.com/photo-1667714789831-66e2297b35e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM0fFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+      no-repeat center center;
+  }
+  .card-links {
+    display: none;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    position: absolute;
+    bottom: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: 3s;
+  }
+  .card-img:hover .card-links {
+    display: flex;
+    transform: scale(1);
+  }
+  .card-links li {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fafafa;
+    cursor: pointer;
+  }
+  .card-links li a[title="Instagram"]::before {
+    content: "📷";
+  }
+  .card-links li a[title="Dribbble"]::before {
+    content: "🏀";
+  }
+  .card-links li a[title="Behance"]::before {
+    content: "🎨";
+  }
+  
+  .card-desc {
+    margin: 1rem 0;
+  }
+  .card-desc strong {
+    font-size: 1.5rem;
+    color: var(--h);
+  }
+  .card-desc p,
+  .card-desc hr {
+    font-size: 1.125rem;
+    color: var(--p);
+  }
+  footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer a {
+    text-decoration: underline;
+  }
+  

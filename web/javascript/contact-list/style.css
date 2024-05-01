@@ -1,0 +1,106 @@
+:root {
+    /* colors */
+    --black: #000;
+    --accent-black: #161616;
+    --white: #fff;
+    --accent-white: #f6f6f6;
+    
+    /* animation */
+    --smooth: all .7s cubic-bezier(.7, 0, .3, 1);
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: arial, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #fafafa;
+  }
+  
+  section {
+    display: flex;
+    width: 100%;
+    padding: 2rem;
+    margin: 2rem;
+  }
+  
+  .sect-content {
+    width: 800px;
+    margin: auto;
+  }
+  
+  form {
+    display: flex;
+  }
+  .input-group {
+    flex-direction: column;
+    dislay: 1;
+  }
+  
+  form {
+    gap: 1rem;
+  }
+  
+  .input-group {
+    gap: 0.5rem;
+  }
+  
+  input, button {
+    padding: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    background-color: white;
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+  
+  input {
+    border-bottom: 2px solid black;
+  }
+  button {
+    cursor: pointer;
+  }
+  button[type="submit"] {
+    background-color: rgb(64, 203, 207);
+  }
+  button[type="submit"]:hover {
+    background-color: black;
+    color: white;
+  }
+  .btn-delete:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  #contact-list {
+    width: 100%;
+    text-align: left;
+    margin: 2rem 0;
+  }
+  #contact-list thead, #contact-list tbody, #contact-list tfoot {
+    margin: 0.5rem;
+  }
+  
+  #contact-list thead th, #contact-list tbody td, #contact-list tfoot td {
+    padding: 0.5rem;
+  }
+  #contact-list tbody {
+    min-height: 20vh;
+  }
+  #contact-list tfoot td {
+    border-top: 1px solid #16161650;
+  }
+  
+  .contact-item {
+    width: 100%;
+    padding: 0.5rem;
+  }

@@ -1,0 +1,26 @@
+title: Wesley's blog
+email: wesleybertipaglia@gmail.com
+description: >-
+  Discover a world of inspiration, knowledge, and creativity at Wesley Bertipaglia's digital space. 
+  Whether you're here to explore the latest insights in technology, dive into captivating blog posts, 
+  or connect with a passionate community, you've come to the right place.
+baseurl: ""
+url: ""
+twitter_username: wesleyberti_
+github_username: wesleybertipaglia
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

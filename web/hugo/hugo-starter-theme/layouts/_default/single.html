@@ -1,0 +1,10 @@
+{{ define "main" }}
+    <div>
+        <h1>{{ .Title }}</h1>
+        <p>Published on {{ .Date.Format "January 2, 2006" }}</p>
+        
+        {{ .Content }}
+
+        <p>&copy; {{ now.Year }} {{ .Site.Author.name }}</p>
+    </div>  
+{{ end }}

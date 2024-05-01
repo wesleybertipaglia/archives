@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashy | {% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap.min.css")}}">
+    <script src="{{ url_for('static', filename="js/bootstrap.min.js")}}" defer></script>
+</head>
+<body>
+    <div id="wrapper" class="d-flex flex-column" style="min-height: 100vh;">
+        <header class="bg-body-tertiary border-bottom">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg d-flex align-items-center justify-content-between">
+                    <a href="/" class="navbar-brand">Flashy</a>
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            {% if current_user.is_authenticated %}
+                            <li class="nav-item">                                                            
+                                <a class="nav-link" href="/profile/{{current_user.username}}">{{current_user.username}}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">Logout</a>
+                            </li>                            
+                            {% else %}
+                            <li class="nav-item">                                                            
+                                <a class="nav-link" href="/login">Login</a>                                
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>            
+            </div>
+        </header>
+    
+        <main style="flex: 1;">
+            {% block content %}
+            {% endblock %}  
+        </main>
+    
+        <footer class="border-top">
+            <div class="container p-3">
+                <p class="text-center">
+                    2024 &copy; Wesley Bertipaglia
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

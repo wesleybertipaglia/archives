@@ -1,0 +1,58 @@
+*,
+a {
+  font-family: tahoma;
+  color: #000c;
+}
+
+body {
+  min-height: 100vh;
+  background: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.img-box,
+img {
+  height: 20rem;
+  width: auto;
+  aspect-ratio: 1/1;
+  transition: all 1s;
+}
+.img-box {
+  overflow: hidden;
+}
+img {
+  transform: scale(1.1);
+  vertical-align: middle;
+  outline: 0;
+  -webkit-user-drag: none;
+  object-fit: cover;
+}
+img:hover {
+  transform: scale(1);
+}
+
+.opacity-effect {
+  opacity: 0.5;
+}
+.opacity-effect:hover {
+  opacity: 1;
+}
+
+.gray-effect {
+  filter: grayscale(100%);
+}
+.gray-effect:hover {
+  filter: grayscale(0%);
+}

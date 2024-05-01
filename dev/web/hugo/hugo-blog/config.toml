@@ -1,0 +1,28 @@
+baseURL = 'https://wesleybertipaglia.github.io/'
+languageCode = 'en-us'
+title = 'Wesley Bertipaglia'
+author = 'Wesley Bertipaglia'
+theme = 'paper'
+disqusShortname = 'Wesley Bertipaglia'
+
+[params]
+  # color style (linen, wheat, gray, light)
+  color = 'linen'
+
+  # header social icons
+  twitter = 'wesleyberti_'
+  github = 'wesleybertipaglia'
+  linkedin = 'wesley-bertipaglia'
+  #rss = true
+
+  # home page profile
+  avatar = 'https://wesleybertipaglia.github.io/avatar.svg' # gravatar email or image url
+  name = 'Wesley Bertipaglia'
+  bio = "Hi, I'm Wesley 👋. I'm a Full stack web developer from 🇧🇷, passionate about technology and loves creating cool things."
+
+[menu]
+  [[menu.main]]
+    identifier = "work"
+    name = "Work"
+    url = "/work/"
+    weight = 10
